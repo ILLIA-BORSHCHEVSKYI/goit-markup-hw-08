@@ -1,0 +1,211 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 250ms cubic-bezier(0.39, 1.03, 0.82, 0.08),
+    visibility 250ms cubic-bezier(0.39, 1.03, 0.82, 0.08);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.modal {
+  width: 528px;
+  height: 581px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: var(--main-bg-cl);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  transform: translate(-50%, -50%) scale(1) translatey(0);
+  transition: transform 500ms cubic-bezier(0.39, 1.03, 0.82, 0.08);
+}
+
+.modal-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: var(--main-bg-cl);
+  cursor: pointer;
+  transition: fill var(--main-anim-cfg);
+
+  &:hover,
+  &:focus {
+    fill: var(--accent-cl);
+  }
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(2, 0.1) translatey(-100%);
+  transition: transform 500ms cubic-bezier(0.39, 1.03, 0.82, 0.08);
+}
+
+.service-form {
+  padding: 40px;
+}
+
+.service-form-title {
+  display: block;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--main-txt-cl);
+  margin-bottom: 12px;
+}
+
+.service-form-btn {
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+  height: 50px;
+  background-color: var(--accent-cl);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: none;
+  color: var(--main-bg-cl);
+  cursor: pointer;
+  transition: background-color var(--main-anim-cfg);
+
+  &:hover,
+  &:focus {
+    background-color: #188ce8;
+  }
+}
+
+.service-form-group {
+  margin-bottom: 20px;
+}
+
+.service-form-agreement {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  gap: 7px;
+}
+
+.service-form-label {
+  display: block;
+  margin-bottom: 10px;
+  position: relative;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.service-form-text {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  color: var(--secondary-txt-cl);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.service-form-input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  padding-left: 42px;
+  padding-right: 42px;
+  outline: transparent;
+  transition: border-color var(--main-anim-cfg);
+
+  &:focus {
+    border-color: var(--accent-cl);
+  }
+
+  &:focus + .service-form-icon {
+    fill: var(--accent-cl);
+  }
+}
+
+.service-form-icon {
+  position: absolute;
+  bottom: 11px;
+  left: 12px;
+  transition: fill var(--main-anim-cfg);
+}
+
+.service-form-commentary {
+  resize: none;
+  outline: transparent;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  width: 100%;
+  height: 120px;
+  padding: 12px 16px;
+  display: block;
+
+  &:focus {
+    border-color: var(--accent-cl);
+  }
+
+  &::placeholder {
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.01em;
+    color: rgba(117, 117, 117, 0.5);
+  }
+}
+
+.service-form-link {
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  text-decoration-line: underline;
+  color: var(--accent-cl);
+}
+
+.service-form-checkbox {
+  width: 16px;
+  height: 15px;
+
+  &:checked + .service-form-icon .service-form-icon-checked {
+    opacity: 1;
+  }
+
+  &:checked + .service-form-icon .service-form-icon-unchecked {
+    opacity: 0;
+  }
+}
+
+.service-form-desc {
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: var(--secondary-txt-cl);
+  user-select: none;
+}
+
+.service-form-icon-checked {
+  opacity: 0;
+  transition: opacity var(--main-anim-cfg);
+}
+
+.service-form-icon-unchecked {
+  opacity: 1;
+  transition: opacity var(--main-anim-cfg);
+}
