@@ -1,35 +1,71 @@
 .section--other-background {
   background-color: var(--secondary-bg-cl);
 }
+
 .section__title {
   font-weight: 700;
   font-size: 36px;
   letter-spacing: 0.03em;
   line-height: 1.17;
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .teammates {
-  display: flex;
+  @media screen and (min-width: 768px) {
+    width: 768px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  @media screen and (min-width: 1200px) {
+    display: flex;
+    width: 1170px;
+  }
 }
 
 .teammates__item {
+  width: 450px;
   background-color: var(--main-bg-cl);
-  width: 270px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
-  margin-right: 30px;
+  margin-bottom: 30px;
 
   &:last-child {
-    margin-right: 0;
+    margin-bottom: 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 354px;
+
+    margin-right: 30px;
+    &:nth-last-child(-n + 2) {
+      margin-bottom: 0;
+    }
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    width: 270px;
+    margin-bottom: 0;
+    margin-right: 30px;
+    &:last-child {
+      margin-right: 0;
+    }
+    &:nth-child(2) {
+      margin-right: 30px;
+    }
   }
 }
 
 .teammates__container {
   padding-top: 30px;
-  padding-bottom: 30px;
+  padding-bottom: 24px;
+
+  @media screen and (min-width: 1200px) {
+    padding-bottom: 30px;
+  }
 }
 
 .teammates__title {
@@ -75,6 +111,19 @@
   &:hover .socials__icon,
   &:focus .socials__icon {
     fill: var(--main-bg-cl);
+  }
+}
+.teammates__img {
+  width: 450px;
+  height: 460px;
+
+  @media screen and (min-width: 768px) {
+    width: 354px;
+    height: 347px;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 270px;
+    height: 260px;
   }
 }
 
