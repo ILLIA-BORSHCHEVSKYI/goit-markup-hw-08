@@ -1652,8 +1652,6 @@ ul {
 }
 
 .portfolio-overlay {
-  width: 370px;
-  height: 294px;
   background-color: rgba(33, 150, 243, 0.9);
   position: absolute;
   top: 0;
@@ -1664,6 +1662,22 @@ ul {
   transition: -webkit-transform var(--main-anim-cfg);
   transition: transform var(--main-anim-cfg);
   transition: transform var(--main-anim-cfg), -webkit-transform var(--main-anim-cfg);
+}
+@media screen and (min-width: 480px) {
+  .portfolio-overlay {
+    width: 450px;
+    height: 294px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .portfolio-overlay {
+    width: 354px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .portfolio-overlay {
+    width: 370px;
+  }
 }
 
 .portfolio-overlay-txt {
