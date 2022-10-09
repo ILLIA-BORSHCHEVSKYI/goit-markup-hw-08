@@ -1,15 +1,7 @@
 .footer {
-  width: 100%;
   background-color: #2f303a;
   padding-top: 60px;
   padding-bottom: 60px;
-
-  @media screen and (min-width: 768px) {
-    width: 768px;
-  }
-  @media screen and (min-width: 1200px) {
-    width: 100%;
-  }
 }
 
 .footer__logo {
@@ -27,6 +19,7 @@
 .address {
   margin-top: 20px;
 }
+
 .address__link {
   font-size: 14px;
   line-height: 1.71;
@@ -63,13 +56,11 @@
 
 .address-container {
   text-align: center;
-  flex-grow: 1;
   margin-bottom: 60px;
 
-  @media screen and (min-width: 480px) {
-  }
   @media screen and (min-width: 1200px) {
     text-align: start;
+    margin-bottom: 0;
   }
 }
 
@@ -82,19 +73,16 @@
   }
   @media screen and (min-width: 1200px) {
     display: flex;
-    align-items: baseline;
     flex-wrap: nowrap;
   }
 }
 
 .footer-socials {
-  @media screen and (min-width: 768px) {
-    margin-left: 165px;
-    margin-right: 89px;
+  @media screen and (max-width: 767px) {
+    margin-bottom: 60px;
   }
   @media screen and (min-width: 1200px) {
     margin-left: 70px;
-    margin-right: 0;
   }
 }
 
@@ -107,6 +95,9 @@
   color: var(--main-bg-cl);
   margin-bottom: 20px;
   text-align: center;
+  @media screen and (min-width: 1200px) {
+    text-align: start;
+  }
 }
 
 .footer-socials__list {
@@ -114,7 +105,6 @@
   justify-content: center;
   gap: 10px;
   margin-top: 16px;
-  margin-bottom: 60px;
 }
 
 .footer-socials__link {
@@ -142,7 +132,7 @@
 
 .subscribe-box {
   text-align: center;
-  @media screen and (min-width: 768px) and (max-width: 1199px) {
+  @media screen and (max-width: 1199px) {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -161,19 +151,20 @@
   color: var(--main-bg-cl);
   margin-bottom: 20px;
 
-  @media screen and (min-width: 768px) {
-  }
   @media screen and (min-width: 1200px) {
     text-align: start;
   }
 }
 
 .subscribe-box__label {
-  margin-right: 12px;
+  width: 100%;
+  @media screen and (min-width: 1200px) {
+    margin-right: 12px;
+  }
 }
 
 .subscribe-box__input {
-  width: 450px;
+  width: 100%;
   height: 50px;
   background-color: transparent;
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -195,12 +186,14 @@
     color: rgba(255, 255, 255, 0.6);
   }
 
-  @media screen and (min-width: 1200px) {
-    width: 358px;
-  }
-
   &:focus {
     border-color: var(--accent-cl);
+  }
+  @media screen and (min-width: 768px) {
+    width: 358px;
+  }
+  @media screen and (min-width: 1200px) {
+    margin-bottom: 0;
   }
 }
 
